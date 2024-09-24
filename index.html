@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JavaScript</title>
+    <script>
+        
+// Programa 1: Verificar si puede aplicar a un crédito bancario
+function verificarCredito() {
+    let edad = parseInt(prompt("Ingrese su edad:"));
+    let salario = parseFloat(prompt("Ingrese su salario mensual:"));
+    
+    if (edad > 25 && salario > 3000) {
+        alert("Puede aplicar a un crédito bancario.");
+    } else {
+        alert("No cumple con los requisitos para aplicar.");
+    }
+}
+
+// Programa 2: Verificar divisibilidad y mostrar números divisibles
+function verificarDivisibilidad() {
+    let numero = parseInt(prompt("Ingrese un número:"));
+    let mensaje = "";
+    
+    if (numero % 3 === 0 && numero % 5 === 0) {
+        mensaje = "El número es divisible entre 3 y 5.";
+    } else if (numero % 3 === 0) {
+        mensaje = "El número es divisible entre 3.";
+    } else if (numero % 5 === 0) {
+        mensaje = "El número es divisible entre 5.";
+    } else {
+        mensaje = "El número no es divisible entre 3 ni 5.";
+    }
+    
+    alert(mensaje);
+    
+    let divisibles = "Números divisibles entre 3 o 5:\n";
+    for (let i = 1; i <= numero; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+            divisibles += i + "\n";
+        }
+    }
+    
+    alert(divisibles);
+}
+
+// Programa 3: Calcular el factorial de un número
+function calcularFactorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    } else {
+        return n * calcularFactorial(n - 1);
+    }
+}
+
+function mostrarFactorial() {
+    let numero = parseInt(prompt("Ingrese un número para calcular su factorial:"));
+    let resultado = calcularFactorial(numero);
+    alert("El factorial de " + numero + " es: " + resultado);
+}
+    </script>
+</head>
+<body>
+    <h1>Ejercicios de JavaScript</h1>
+    
+    <!-- Programa 1: Aplicar a un crédito bancario -->
+    <section>
+        <h2>1. Aplicar a Crédito Bancario</h2>
+        <p>Ingrese su edad y salario mensual para verificar si puede aplicar a un crédito bancario.</p>
+        <button onclick="verificarCredito()">Verificar Requisitos</button>
+    </section>
+    
+    <hr>
+
+    <!-- Programa 2: Verificar divisibilidad -->
+    <section>
+        <h2>2. Verificar Divisibilidad</h2>
+        <p>Ingrese un número para verificar si es divisible entre 3, 5, o ambos. También se mostrará una lista de todos los números divisibles entre 3 o 5 hasta el número ingresado.</p>
+        <button onclick="verificarDivisibilidad()">Verificar Divisibilidad</button>
+    </section>
+
+    <hr>
+
+    <!-- Programa 3: Calcular el factorial de un número -->
+    <section>
+        <h2>3. Calcular Factorial</h2>
+        <p>Ingrese un número para calcular su factorial.</p>
+        <button onclick="mostrarFactorial()">Calcular Factorial</button>
+    </section>
+
+</body>
+</html>
